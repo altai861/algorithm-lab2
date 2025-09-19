@@ -14,13 +14,10 @@ public class MergeSort {
         if (left < right) {
             int mid = (left + right) / 2;
 
-            // Sort left half
             mergeSort(array, left, mid);
 
-            // Sort right half
             mergeSort(array, mid + 1, right);
 
-            // Merge halves
             merge(array, left, mid, right);
         }
     }
@@ -32,7 +29,6 @@ public class MergeSort {
         double[] L = new double[n1];
         double[] R = new double[n2];
 
-        // Copy data
         for (int i = 0; i < n1; i++) {
             L[i] = array[left + i];
         }
@@ -40,7 +36,6 @@ public class MergeSort {
             R[j] = array[mid + 1 + j];
         }
 
-        // Merge temp arrays back
         int i = 0, j = 0, k = left;
         while (i < n1 && j < n2) {
             if (L[i] <= R[j]) {
@@ -50,7 +45,6 @@ public class MergeSort {
             }
         }
 
-        // Copy remaining elements
         while (i < n1) {
             array[k++] = L[i++];
         }
@@ -76,7 +70,6 @@ public class MergeSort {
         }
     } 
 
-    // Example usage
     public static void main(String[] args) {
         double[] numbers = { 38.5, 27.2, 43.9, 3.1, 9.0, 82.6, 10.3 };
         MergeSort.sort(numbers);

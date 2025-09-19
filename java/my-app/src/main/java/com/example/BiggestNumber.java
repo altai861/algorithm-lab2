@@ -17,7 +17,7 @@ public class BiggestNumber {
         double maxRight = findMaxRecursive(arr, mid + 1, right);
 
         return Math.max(maxLeft, maxRight);
-    }
+    }       
     public static void main(String args[]) {
         double[] arr = {1, 23, 4, 1, 123};
         double biggest = findMaxRecursive(arr, 0, arr.length - 1);
